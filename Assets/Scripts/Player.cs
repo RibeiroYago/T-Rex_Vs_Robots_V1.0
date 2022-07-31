@@ -18,20 +18,25 @@ public class Player : MonoBehaviour
     private bool isOnFloor;
 
     private int pontuacao;
+    private int crescente = 0;
 
     public Text PontosText;
 
     public Animator animatorComponent;
 
+    public AudioSource pular_AudioSource;
+    public AudioSource FimDeJogo_AudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
-        pontuacaoInicial = 999000;
+        pontuacaoInicial = 996000;
     }
 
     // Update is called once per frame
     void Update()
     {
+        crescente = crescente + 1;
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Pular();
@@ -53,7 +58,7 @@ public class Player : MonoBehaviour
         //pontuacao = pontuacao + int.Parse(Time.time.ToString()); --> Outra Opcao
         //pontuacao = Mathf.FloorToInt(Time.time); 
     
-        pontuacao = Mathf.FloorToInt(Time.time) * multiplicadorPontos + pontuacaoInicial; // Mudar depois
+        pontuacao = crescente / 5 * multiplicadorPontos + pontuacaoInicial; // Mudar depois
         PontosText.text = pontuacao.ToString();
 
         if(pontuacao >= 999999)
@@ -64,10 +69,11 @@ public class Player : MonoBehaviour
 
     void Pular()
     {
-        animatorComponent.SetBool("Pulando", true);
         if (isOnFloor)
         {
+            animatorComponent.SetBool("Pulando", true);
             rb.AddForce(Vector2.up * forcaPulo);
+            pular_AudioSource.Play();
         }   
     }
 
@@ -85,8 +91,13 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Inimigo_Cacto"))
         {
+            pontuacao = 0;
+            crescente = 0;
+
             //SceneManager.LoadScene(0);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);//-- Pega e reinicia o nivel atual
+
+            FimDeJogo_AudioSource.Play();
         }
     }
 }

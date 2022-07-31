@@ -6,6 +6,8 @@ public class Gera_Cactos : MonoBehaviour
 {
 
     public GameObject[] cactoPrefabs;
+    public GameObject[] dinossauroInimigo;
+
     public float delay;
     public float delayEntreCactos;
     
