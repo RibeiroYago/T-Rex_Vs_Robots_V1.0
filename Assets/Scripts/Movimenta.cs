@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movimenta_Chao : MonoBehaviour
+public class Movimenta : MonoBehaviour
 {
     public Vector2 direcao;
-
-    public GameObject pontuacaoPlayer;
 
     public float velocidade;
     
@@ -17,12 +15,6 @@ public class Movimenta_Chao : MonoBehaviour
 
     void Update()
     {
-
-        if (pontuacaoPlayer.GetComponent<Player>().pontuacao >= 999999)
-        {
-            velocidade = 0;
-        }
-
         transform.Translate(direcao * velocidade * Time.deltaTime);
     }
 }

@@ -333,7 +333,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254227599}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.22, y: 0, z: 0}
+  m_LocalPosition: {x: -7.22, y: 0, z: 10}
   m_LocalScale: {x: 1.2284223, y: 1.3088837, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -351,6 +351,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7366f13c2872781419df92a53d45bb60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 254227599}
+  cameras: {fileID: 519420028}
+  PortalFinal: {fileID: 7889833982087658548, guid: b6cd4866a5811df4b9ce11df269f79df,
+    type: 3}
   rb: {fileID: 254227601}
   forcaPulo: 800
   layerChao:
@@ -360,8 +364,12 @@ MonoBehaviour:
   pontuacaoInicial: 0
   PontosText: {fileID: 586346477}
   animatorComponent: {fileID: 254227605}
+  spriteRenderer: {fileID: 254227602}
   pular_AudioSource: {fileID: 526592686}
   FimDeJogo_AudioSource: {fileID: 1647106040}
+  playerVelocity: 7
+  pontuacao: 0
+  movimentacao: 0
 --- !u!95 &254227605
 Animator:
   serializedVersion: 3
@@ -415,7 +423,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.299988, y: -67.7}
+  m_AnchoredPosition: {x: 6.7, y: -38.6}
   m_SizeDelta: {x: 160, y: 29.479904}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &395857998
@@ -536,7 +544,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.53, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -703,7 +711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -102.100006, y: -72}
+  m_AnchoredPosition: {x: -103.69998, y: -42.90001}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &586346477
@@ -781,8 +789,9 @@ MonoBehaviour:
   - {fileID: 8069638759150134656, guid: 32c236157bb564f4ba8090b7a2e0df50, type: 3}
   - {fileID: 8069638759150134656, guid: f75799947a93b8e4f94eb2097fac790a, type: 3}
   dinossauroInimigo: []
+  pontuacaoPlayer: {fileID: 254227599}
   delay: 2
-  delayEntreCactos: 4
+  delayEntreCactos: 1
 --- !u!4 &1239335615
 Transform:
   m_ObjectHideFlags: 0
@@ -830,7 +839,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direcao: {x: -1, y: 0}
-  velocidade: 4
+  pontuacaoPlayer: {fileID: 254227599}
+  velocidade: 15
 --- !u!61 &1464539527
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1285,7 +1295,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direcao: {x: -1, y: 0}
-  velocidade: 4
+  pontuacaoPlayer: {fileID: 254227599}
+  velocidade: 15
 --- !u!114 &1732244368
 MonoBehaviour:
   m_ObjectHideFlags: 0

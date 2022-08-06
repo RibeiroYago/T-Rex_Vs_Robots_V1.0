@@ -8,6 +8,10 @@ public class Player : MonoBehaviour
 {
     //public Movimenta_Chao movimenta_Chao;
 
+    public GameObject player;
+    public GameObject cameras;
+    public GameObject PortalFinal;
+
     public Rigidbody2D rb;
     public float forcaPulo;
     public LayerMask layerChao;
@@ -15,22 +19,30 @@ public class Player : MonoBehaviour
     public int multiplicadorPontos;
     public int pontuacaoInicial;
 
-    private bool isOnFloor;
-
-    private int pontuacao;
-    private int crescente = 0;
-
     public Text PontosText;
 
     public Animator animatorComponent;
+    public SpriteRenderer spriteRenderer;
 
     public AudioSource pular_AudioSource;
     public AudioSource FimDeJogo_AudioSource;
 
+    public float playerVelocity;
+    
+    private bool isOnFloor;
+
+    public int pontuacao;
+    private int crescente = 0;
+
+    public bool movimentacao = false;
+    private bool camera = false;
+    private string look_direction;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        pontuacaoInicial = 996000;
+        pontuacaoInicial = 999900;
     }
 
     // Update is called once per frame
@@ -55,15 +67,54 @@ public class Player : MonoBehaviour
             animatorComponent.SetBool("Abaixando", false);
         }
 
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            if (movimentacao)
+            {
+                Esquerda();
+            }
+        }
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            if (movimentacao)
+            {
+                Direita();
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            animatorComponent.SetBool("Correndo", false);
+            animatorComponent.SetBool("Pulando", true);
+        }
+
         //pontuacao = pontuacao + int.Parse(Time.time.ToString()); --> Outra Opcao
         //pontuacao = Mathf.FloorToInt(Time.time); 
-    
-        pontuacao = crescente / 5 * multiplicadorPontos + pontuacaoInicial; // Mudar depois
-        PontosText.text = pontuacao.ToString();
-
+        if (!movimentacao)
+        {
+            pontuacao = crescente / 5 * multiplicadorPontos + pontuacaoInicial; // Mudar depois
+            PontosText.text = pontuacao.ToString();
+        }
+        
         if(pontuacao >= 999999)
         {
-            SceneManager.LoadScene(0);
+            if(movimentacao == false)
+            {
+                Mostra_Portal();
+                look_direction = "Direita";
+                animatorComponent.SetBool("Correndo", false);
+                animatorComponent.SetBool("Pulando", true);
+                movimentacao = true;
+                //SceneManager.LoadScene(0);
+            }
+            
+            if((int)(player.transform.position.x) == 0 && camera == false)
+            {
+                cameras.transform.parent = player.transform;
+                cameras.transform.position = new Vector3(player.transform.position.x, 1f, -10);
+                camera = true;
+            }
         }
     }
 
@@ -78,8 +129,41 @@ public class Player : MonoBehaviour
     }
 
     void Abaixar()
-    {
+    {        
         animatorComponent.SetBool("Abaixando", true);
+    }
+
+    void Direita()
+    {
+        animatorComponent.SetBool("Correndo", true);
+        animatorComponent.SetBool("Pulando", false);
+        transform.position = transform.position + new Vector3(1f * playerVelocity * Time.deltaTime, 0, 0);
+
+        if(look_direction == "Esquerda")
+        {
+            spriteRenderer.flipX = false;
+        }
+
+        look_direction = "Direita";
+    }
+
+    void Esquerda()
+    {
+        animatorComponent.SetBool("Correndo", true);
+        animatorComponent.SetBool("Pulando", false);
+        transform.position = transform.position + new Vector3(-1f * playerVelocity * Time.deltaTime, 0, 0);
+
+        if (look_direction == "Direita")
+        {
+            spriteRenderer.flipX = true;
+        }
+
+        look_direction = "Esquerda";
+    }
+
+    void Mostra_Portal()
+    {
+        Instantiate(PortalFinal, new Vector3(15,1.3f,-10), Quaternion.identity) ;
     }
 
     private void FixedUpdate()

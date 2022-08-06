@@ -8,6 +8,8 @@ public class Gera_Cactos : MonoBehaviour
     public GameObject[] cactoPrefabs;
     public GameObject[] dinossauroInimigo;
 
+    public GameObject pontuacaoPlayer;
+
     public float delay;
     public float delayEntreCactos;
     
@@ -19,11 +21,14 @@ public class Gera_Cactos : MonoBehaviour
 
     private void Gera_Cacto()
     {
-        var qtdCactos = cactoPrefabs.Length;
-        var indiceCacto = Random.Range(0, qtdCactos);
-        var cactoPrefab = cactoPrefabs[indiceCacto];
+        if (pontuacaoPlayer.GetComponent<Player>().pontuacao + 1 <= 999999)
+        {
+            var qtdCactos = cactoPrefabs.Length;
+            var indiceCacto = Random.Range(0, qtdCactos);
+            var cactoPrefab = cactoPrefabs[indiceCacto];
 
-        Instantiate(cactoPrefab, transform.position, Quaternion.identity);
+            Instantiate(cactoPrefab, transform.position, Quaternion.identity);
+        }
     }
     
     void Update()
