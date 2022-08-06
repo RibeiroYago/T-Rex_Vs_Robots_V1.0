@@ -4762,7 +4762,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7889833982087658549}
-  - component: {fileID: 2399486552462798428}
   m_Layer: 0
   m_Name: Portal_Final_Fase
   m_TagString: Finish
@@ -4778,7 +4777,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7889833982087658548}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -8}
+  m_LocalPosition: {x: -2.3583221, y: 1.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7889833982466544186}
@@ -4786,22 +4785,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2399486552462798428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7889833982087658548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 591feeedce81aad42aab233049997082, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  Enimy: {fileID: 7889833982087658548}
-  Msg_Entrar: {fileID: 3889730591927040739, guid: 6d891a7dcd85839428948be7dccb8532,
-    type: 3}
 --- !u!1 &7889833982466544191
 GameObject:
   m_ObjectHideFlags: 0

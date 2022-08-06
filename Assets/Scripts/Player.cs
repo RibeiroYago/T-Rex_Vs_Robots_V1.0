@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     public GameObject player;
     public GameObject cameras;
     public GameObject PortalFinal;
+    public GameObject Chao1;
+    public GameObject Chao2;
 
     public Rigidbody2D rb;
     public float forcaPulo;
@@ -35,6 +37,7 @@ public class Player : MonoBehaviour
     private int crescente = 0;
 
     public bool movimentacao = false;
+    public bool trava = false;
     private bool camera = false;
     private string look_direction;
 
@@ -91,21 +94,16 @@ public class Player : MonoBehaviour
 
         //pontuacao = pontuacao + int.Parse(Time.time.ToString()); --> Outra Opcao
         //pontuacao = Mathf.FloorToInt(Time.time); 
-        if (!movimentacao)
-        {
-            pontuacao = crescente / 5 * multiplicadorPontos + pontuacaoInicial; // Mudar depois
-            PontosText.text = pontuacao.ToString();
-        }
         
         if(pontuacao >= 999999)
         {
-            if(movimentacao == false)
+            if(movimentacao == false && trava == false)
             {
-                Mostra_Portal();
                 look_direction = "Direita";
                 animatorComponent.SetBool("Correndo", false);
                 animatorComponent.SetBool("Pulando", true);
                 movimentacao = true;
+                Mostra_Portal();
                 //SceneManager.LoadScene(0);
             }
             
@@ -115,6 +113,11 @@ public class Player : MonoBehaviour
                 cameras.transform.position = new Vector3(player.transform.position.x, 1f, -10);
                 camera = true;
             }
+        }
+        else
+        {
+            pontuacao = crescente / 5 * multiplicadorPontos + pontuacaoInicial; // Mudar depois
+            PontosText.text = pontuacao.ToString();
         }
     }
 
@@ -163,7 +166,22 @@ public class Player : MonoBehaviour
 
     void Mostra_Portal()
     {
-        Instantiate(PortalFinal, new Vector3(15,1.3f,-10), Quaternion.identity) ;
+        var posicaoChao1 = Chao1.GetComponent<Chao_Infinito>().transform.position.x;
+        var posicaoChao2 = Chao2.GetComponent<Chao_Infinito>().transform.position.x;
+        
+
+        if (posicaoChao1 > posicaoChao2)
+        {
+            Debug.Log("Entrou");
+            PortalFinal.transform.position = new Vector3(posicaoChao1 + 10, 1.3f, -10);
+            Instantiate(PortalFinal, new Vector3(posicaoChao1 + 10, 1.3f, -10), Quaternion.identity);
+        }
+        else
+        {
+            Debug.Log("Entrou");
+            PortalFinal.transform.position = new Vector3(posicaoChao1 + 10, 1.3f, -10);
+            Instantiate(PortalFinal, new Vector3(posicaoChao2 + 10, 1.3f, -10), Quaternion.identity);
+        }
     }
 
     private void FixedUpdate()

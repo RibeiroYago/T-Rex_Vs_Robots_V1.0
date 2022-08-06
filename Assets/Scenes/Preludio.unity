@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 254227601}
   - component: {fileID: 254227600}
   - component: {fileID: 254227604}
+  - component: {fileID: 254227606}
   - component: {fileID: 254227605}
   m_Layer: 0
   m_Name: Dinossauro_0
@@ -355,6 +356,8 @@ MonoBehaviour:
   cameras: {fileID: 519420028}
   PortalFinal: {fileID: 7889833982087658548, guid: b6cd4866a5811df4b9ce11df269f79df,
     type: 3}
+  Chao1: {fileID: 1732244363}
+  Chao2: {fileID: 1464539525}
   rb: {fileID: 254227601}
   forcaPulo: 800
   layerChao:
@@ -389,6 +392,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &254227606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254227599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 591feeedce81aad42aab233049997082, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 254227599}
+  Enimy: {fileID: 7889833982087658548, guid: b6cd4866a5811df4b9ce11df269f79df, type: 3}
+  Msg_Entrar: {fileID: 3889730591927040739, guid: 6d891a7dcd85839428948be7dccb8532,
+    type: 3}
 --- !u!1 &395857996
 GameObject:
   m_ObjectHideFlags: 0
