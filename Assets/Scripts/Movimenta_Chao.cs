@@ -18,7 +18,7 @@ public class Movimenta_Chao : MonoBehaviour
     void Update()
     {
 
-        if (pontuacaoPlayer.GetComponent<Player>().pontuacao >= 999999)
+        if (pontuacaoPlayer.GetComponent<Player>().pontuacao >= 999999 || pontuacaoPlayer.GetComponent<Player>().vida == 0)
         {
             velocidade = 0;
         }

@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public GameObject PortalFinal;
     public GameObject Chao1;
     public GameObject Chao2;
+    public GameObject Movimenta;
 
     public Rigidbody2D rb;
     public float forcaPulo;
@@ -30,6 +31,7 @@ public class Player : MonoBehaviour
     public AudioSource FimDeJogo_AudioSource;
 
     public float playerVelocity;
+    public int vida = 100;
     
     private bool isOnFloor;
 
@@ -45,12 +47,17 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pontuacaoInicial = 999900;
+        pontuacaoInicial = 999500;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(vida == 0)
+        {
+            return;
+        }
+
         crescente = crescente + 1;
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -94,6 +101,11 @@ public class Player : MonoBehaviour
 
         //pontuacao = pontuacao + int.Parse(Time.time.ToString()); --> Outra Opcao
         //pontuacao = Mathf.FloorToInt(Time.time); 
+        if (!movimentacao && trava == false)
+        {
+            pontuacao = crescente / 5 * multiplicadorPontos + pontuacaoInicial; // Mudar depois
+            PontosText.text = pontuacao.ToString();
+        }
         
         if(pontuacao >= 999999)
         {
@@ -113,11 +125,6 @@ public class Player : MonoBehaviour
                 cameras.transform.position = new Vector3(player.transform.position.x, 1f, -10);
                 camera = true;
             }
-        }
-        else
-        {
-            pontuacao = crescente / 5 * multiplicadorPontos + pontuacaoInicial; // Mudar depois
-            PontosText.text = pontuacao.ToString();
         }
     }
 
@@ -179,7 +186,7 @@ public class Player : MonoBehaviour
         else
         {
             Debug.Log("Entrou");
-            PortalFinal.transform.position = new Vector3(posicaoChao1 + 10, 1.3f, -10);
+            PortalFinal.transform.position = new Vector3(posicaoChao2 + 10, 1.3f, -10);
             Instantiate(PortalFinal, new Vector3(posicaoChao2 + 10, 1.3f, -10), Quaternion.identity);
         }
     }
@@ -196,8 +203,14 @@ public class Player : MonoBehaviour
             pontuacao = 0;
             crescente = 0;
 
+            animatorComponent.SetBool("Morrendo", true);
+            vida = 0;
+            Movimenta.GetComponent<Movimenta>().direcao.x = 0;
+            Movimenta.GetComponent<Movimenta>().velocidade = 0;
+
+
             //SceneManager.LoadScene(0);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);//-- Pega e reinicia o nivel atual
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);//-- Pega e reinicia o nivel atual
 
             FimDeJogo_AudioSource.Play();
         }

@@ -17,25 +17,25 @@ public class Gera_Cactos : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("Gera_Cacto", delay, delayEntreCactos);
+        //InvokeRepeating("Gera_Cacto", delay, delayEntreCactos);
     }
 
     private void Gera_Cacto()
     {
         ultimoTempo = Time.time;
-        if (pontuacaoPlayer.GetComponent<Player>().pontuacao + 1 <= 999999)
-        {
+        //if (pontuacaoPlayer.GetComponent<Player>().pontuacao + 1 <= 999999)
+        //{
             var qtdCactos = cactoPrefabs.Length;
             var indiceCacto = Random.Range(0, qtdCactos);
             var cactoPrefab = cactoPrefabs[indiceCacto];
 
             Instantiate(cactoPrefab, transform.position, Quaternion.identity);
-        } 
+        //} 
     }
     
     void Update()
     {
-        /*if (pontuacaoPlayer.GetComponent<Player>().pontuacao + 1 <= 999999)
+        if (pontuacaoPlayer.GetComponent<Player>().pontuacao + 1 <= 999999 && pontuacaoPlayer.GetComponent<Player>().vida != 0)
         {
             if (Time.time > delay)
             {
@@ -44,10 +44,9 @@ public class Gera_Cactos : MonoBehaviour
                 {
                     Debug.Log(Time.time - ultimoTempo);
                     Gera_Cacto();
-                    delayEntreCactos = Random.Range(0.5f, 2f);
+                    delayEntreCactos = Random.Range(0.5f, 1.5f);
                 }
             }
-        }
-     */    
+        }  
     }
 }

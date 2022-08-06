@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movimenta : MonoBehaviour
 {
     public Vector2 direcao;
+    public GameObject Player;
 
     public float velocidade;
     

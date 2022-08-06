@@ -23,6 +23,8 @@ public class Distancia_Portal : MonoBehaviour
     {
         distancia = Player.GetComponent<Player>().PortalFinal.transform.position.x - Player.transform.position.x;
 
+        Debug.Log(Player.GetComponent<Player>().PortalFinal.transform.position.x); 
+
 
         if (distancia < 5f && entrou == false)
         {
