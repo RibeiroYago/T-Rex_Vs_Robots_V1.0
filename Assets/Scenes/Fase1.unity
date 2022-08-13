@@ -7016,7 +7016,6 @@ GameObject:
   - component: {fileID: 1515333796}
   - component: {fileID: 1515333795}
   - component: {fileID: 1515333794}
-  - component: {fileID: 1515333793}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -7024,41 +7023,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1515333793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1515333792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7366f13c2872781419df92a53d45bb60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  cameras: {fileID: 0}
-  PortalFinal: {fileID: 0}
-  Chao1: {fileID: 0}
-  Chao2: {fileID: 0}
-  Movimenta: {fileID: 0}
-  rb: {fileID: 0}
-  forcaPulo: 0
-  layerChao:
-    serializedVersion: 2
-    m_Bits: 0
-  multiplicadorPontos: 0
-  pontuacaoInicial: 0
-  PontosText: {fileID: 0}
-  animatorComponent: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  pular_AudioSource: {fileID: 0}
-  FimDeJogo_AudioSource: {fileID: 0}
-  playerVelocity: 0
-  vida: 100
-  pontuacao: 0
-  movimentacao: 0
-  trava: 0
 --- !u!50 &1515333794
 Rigidbody2D:
   serializedVersion: 4
