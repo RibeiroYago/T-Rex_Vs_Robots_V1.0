@@ -9,10 +9,12 @@ public class Player0 : MonoBehaviour
     public float JumpForce;
     public bool isJumping;
     public bool doubleJump;
+    public Color corPadrao;
 
     
     private Rigidbody2D rig;
     private Animator anim;
+    private Vector3 PosicaoIncial;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,10 @@ public class Player0 : MonoBehaviour
         
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        corPadrao = spriteRenderer.color;
+        PosicaoIncial = transform.position;
+
+
     }
 
     // Update is called once per frame
@@ -29,6 +35,7 @@ public class Player0 : MonoBehaviour
         Jump();
     }
 
+    // Função de movimento, horizontal libera os inputs das teclas awsd e setas
     void Move()
     {
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
@@ -58,7 +65,7 @@ public class Player0 : MonoBehaviour
 
     
     
-    
+    // Pular
     void  Jump()
     {
         if(Input.GetButtonDown("Jump"))
@@ -83,14 +90,50 @@ public class Player0 : MonoBehaviour
         }
     }
 
+
+
+    // Morte do personagem
+    void Morte()
+    {
+        anim.SetBool("Morte", true);
+        StartCoroutine(Dano());
+
+
+        
+        
+
+    }
     
-    
+
+    // gerar mudança de cor ao levar dano; fazer hit kill ao cair na areia movediça;
+    IEnumerator Dano()
+    {
+
+        playerSprite.color = new Color(255f, 0f,0f);
+        
+        yield return new WaitForSeconds(0.1f);
+        playerSrite.color = corPadrao;
+        anim.SetBool("Morte", false);
+        transform.position = PosicaoIncial;
+
+        
+
+    }
+
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.layer == 4)
         {
             isJumping = false;
             anim.SetBool("Pulando", false);
+        }
+
+        if(collision.gameObject.CompareTag("AreiaMove"))
+        {
+            
+            Morte();
+
         }
     }
 
