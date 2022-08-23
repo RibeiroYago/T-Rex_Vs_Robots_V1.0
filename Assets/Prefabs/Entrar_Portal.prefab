@@ -77,7 +77,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Entrar no portal? S / N
+  m_Text: Tecle Space Para Entrar
 --- !u!1 &3889730591927040739
 GameObject:
   m_ObjectHideFlags: 0

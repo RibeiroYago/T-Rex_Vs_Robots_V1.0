@@ -1,147 +1,174 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player0 : MonoBehaviour
-{   
+{
+    //Publics
+    public GameObject dino;
+    public GameObject GameOverCanvas;
 
-    public float Speed;
-    public float JumpForce;
-    public bool isJumping;
-    public bool doubleJump;
-    public Color corPadrao;
+    public Animator animatorComponent;
 
-    
-    private Rigidbody2D rig;
-    private Animator anim;
-    private Vector3 PosicaoIncial;
+    public SpriteRenderer spriteRenderer;
 
-    // Start is called before the first frame update
-    void Start()
+    public Rigidbody2D rb;
+
+    public LayerMask layerChao;
+    public LayerMask layerArmadilhas;
+
+    public AudioSource pular_AudioSource;
+    public AudioSource FimDeJogo_AudioSource;
+
+    public float forcaPulo;
+    public float playerVelocity;
+    public float vida;
+
+    //Privates
+    private bool isOnFloor;
+    private string look_direction = "Direita";
+
+
+    private void Start()
     {
+        animatorComponent.SetBool("Correndo", false);
+        animatorComponent.SetBool("Abaixando", false);
+        animatorComponent.SetBool("Pulando", false);
+        animatorComponent.SetBool("Parado", true);
+        Debug.Log(SceneManager.GetActiveScene().name);
+    }
+
+    private void Update()
+    {
+        if(vida <= 0f)
+        {
+            Morrer();
+        }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            Pular();
+        }
+        else if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            animatorComponent.SetBool("Pulando", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            Abaixar();
+        }
+        else if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            animatorComponent.SetBool("Abaixando", false);
+        }
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            Esquerda();
+        }
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            Direita();
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            animatorComponent.SetBool("Correndo", false);
+            animatorComponent.SetBool("Parado", true);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        isOnFloor = Physics2D.Raycast(transform.position, Vector2.down, 0.8f, layerChao);
+    }
+    void Pular()
+    {
+        if (isOnFloor)
+        {
+            animatorComponent.SetBool("Pulando", true);
+            rb.AddForce(Vector2.up * forcaPulo);
+            pular_AudioSource.Play();
+        }
+    }
+
+    void Abaixar()
+    {
+        animatorComponent.SetBool("Abaixando", true);
+    }
+
+    void Direita()
+    {
+        animatorComponent.SetBool("Correndo", true);
+        animatorComponent.SetBool("Parado", false);
+        transform.position = transform.position + new Vector3(1f * playerVelocity * Time.deltaTime, 0, 0);
+
+        if (look_direction == "Esquerda")
+        {
+            spriteRenderer.flipX = false;
+        }
+
+        look_direction = "Direita";
+    }
+
+    void Esquerda()
+    {
+        animatorComponent.SetBool("Correndo", true);
+        animatorComponent.SetBool("Parado", false);
+        transform.position = transform.position + new Vector3(-1f * playerVelocity * Time.deltaTime, 0, 0);
+
+        if (look_direction == "Direita")
+        {
+            spriteRenderer.flipX = true;
+        }
+
+        look_direction = "Esquerda";
+    }
+
+    public void Morrer()
+    {
+        if(playerVelocity != 0)
+        {
+            FimDeJogo_AudioSource.Play();
+        }
+
+        playerVelocity = 0;
+        forcaPulo = 0;
+        PlayerRed(true);
+
+        GameOverCanvas.GetComponent<GameOver>().scenereload = SceneManager.GetActiveScene().name;
+        GameOverCanvas.GetComponent<GameOver>().Gameover = true;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Armadilhas"))
+        { 
+            animatorComponent.SetBool("Morrendo", true);
+            vida = 0;
+        }
+        else if (other.gameObject.CompareTag("Robo_1_Inimigo"))
+        {
+            vida = vida - 20;
+            PlayerRed(false);
+            rb.AddForce(Vector2.up * (forcaPulo/5));
+        }
+    }
+
+    void PlayerRed(bool trigger)
+    {
+        spriteRenderer.color = Color.red;
+
+        if (!trigger)
+        {
+            Invoke("NormalizaCor", 0.5f);
+        }
         
-        rig = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        corPadrao = spriteRenderer.color;
-        PosicaoIncial = transform.position;
-
-
     }
 
-    // Update is called once per frame
-    void Update()
+    void NormalizaCor()
     {
-        Move();
-        Jump();
-    }
-
-    // Função de movimento, horizontal libera os inputs das teclas awsd e setas
-    void Move()
-    {
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
-        transform.position += movement * Time.deltaTime * Speed;
-
-        if(Input.GetAxis("Horizontal") > 0f)
-        {
-            anim.SetBool("Correndo", true);
-            transform.eulerAngles = new Vector3(0f,0f,0f);
-
-        }
-
-        if(Input.GetAxis("Horizontal") < 0f)
-        {
-            anim.SetBool("Correndo", true);
-            transform.eulerAngles = new Vector3(0f,180f,0f);
-        }
-
-        if(Input.GetAxis("Horizontal") == 0f)
-        {
-            anim.SetBool("Correndo", false);
-        }
-        
-
-
-    }
-
-    
-    
-    // Pular
-    void  Jump()
-    {
-        if(Input.GetButtonDown("Jump"))
-        {
-            if(!isJumping)
-            {
-                rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse );
-                doubleJump = true;
-                anim.SetBool("Pulando", true);
-            }
-            else
-            {
-                
-                if(doubleJump)
-                {
-                    rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse );
-                    doubleJump = false;
-                    
-                }
-            
-            }
-        }
-    }
-
-
-
-    // Morte do personagem
-    void Morte()
-    {
-        anim.SetBool("Morte", true);
-        StartCoroutine(Dano());
-
-
-        
-        
-
-    }
-    
-
-    // gerar mudança de cor ao levar dano; fazer hit kill ao cair na areia movediça;
-    IEnumerator Dano()
-    {
-
-        playerSprite.color = new Color(255f, 0f,0f);
-        
-        yield return new WaitForSeconds(0.1f);
-        playerSrite.color = corPadrao;
-        anim.SetBool("Morte", false);
-        transform.position = PosicaoIncial;
-
-        
-
-    }
-
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.layer == 4)
-        {
-            isJumping = false;
-            anim.SetBool("Pulando", false);
-        }
-
-        if(collision.gameObject.CompareTag("AreiaMove"))
-        {
-            
-            Morte();
-
-        }
-    }
-
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if(collision.gameObject.layer == 4 )
-        {
-            isJumping = true;
-        }
+        spriteRenderer.color = Color.white;
     }
 }

@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public GameObject Chao1;
     public GameObject Chao2;
     public GameObject Movimenta;
+    public GameObject GameOverCanvas;
 
     public Rigidbody2D rb;
     public float forcaPulo;
@@ -48,13 +49,15 @@ public class Player : MonoBehaviour
     void Start()
     {
         pontuacaoInicial = 999500;
+        GameOverCanvas.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(vida == 0)
+        if(vida <= 0)
         {
+            GameOver();
             return;
         }
 
@@ -181,13 +184,13 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Entrou");
             PortalFinal.transform.position = new Vector3(posicaoChao1 + 10, 1.3f, -10);
-            Instantiate(PortalFinal, new Vector3(posicaoChao1 + 10, 1.3f, -10), Quaternion.identity);
+            Instantiate(PortalFinal, new Vector3(posicaoChao1 + 10, -0.7f, -10), Quaternion.identity);
         }
         else
         {
             Debug.Log("Entrou");
             PortalFinal.transform.position = new Vector3(posicaoChao2 + 10, 1.3f, -10);
-            Instantiate(PortalFinal, new Vector3(posicaoChao2 + 10, 1.3f, -10), Quaternion.identity);
+            Instantiate(PortalFinal, new Vector3(posicaoChao2 + 10, -0.7f, -10), Quaternion.identity);
         }
     }
 
@@ -204,15 +207,25 @@ public class Player : MonoBehaviour
             crescente = 0;
 
             animatorComponent.SetBool("Morrendo", true);
-            vida = 0;
             Movimenta.GetComponent<Movimenta>().direcao.x = 0;
             Movimenta.GetComponent<Movimenta>().velocidade = 0;
 
-
-            //SceneManager.LoadScene(0);
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);//-- Pega e reinicia o nivel atual
-
-            FimDeJogo_AudioSource.Play();
+            GameOver();
         }
+    }
+
+    void GameOver()
+    {
+        if(vida != 0)
+        {
+            FimDeJogo_AudioSource.Play();
+            vida = 0;
+            spriteRenderer.color = Color.red;
+            GameOverCanvas.SetActive(true);
+            GameOverCanvas.GetComponent<GameOver>().scenereload = SceneManager.GetActiveScene().name;
+            GameOverCanvas.GetComponent<GameOver>().Gameover = true;
+            
+        }
+        
     }
 }
