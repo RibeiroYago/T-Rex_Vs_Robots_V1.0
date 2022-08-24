@@ -27,13 +27,21 @@ public class Passa_Cenas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(TriggerPassagem == true)
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+        if (TriggerPassagem == true || cenaAtual == "Menu_Principal")
         {
             if (Input.GetKeyDown("space"))
             {
+                Debug.Log("Passa_Level");
                 PASSA_LEVEL();
             }
         }
+
+        
     }
 
     public void INICIA_JOGO()
@@ -48,9 +56,14 @@ public class Passa_Cenas : MonoBehaviour
 
     public void PASSA_LEVEL()
     {
-        if(tamanhoLista == numeroLista)
+        if(tamanhoLista != numeroLista)
         {
+            Debug.Log("Passa_If");
             SceneManager.LoadScene(ordemCenas[numeroLista + 1]);
+        }
+        else
+        {
+            SceneManager.LoadScene(ordemCenas[0]);
         }
     }
 

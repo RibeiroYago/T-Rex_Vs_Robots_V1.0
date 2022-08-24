@@ -83,7 +83,7 @@ public class Player0 : MonoBehaviour
     {
         isOnFloor = Physics2D.Raycast(transform.position, Vector2.down, 0.8f, layerChao);
     }
-    void Pular()
+    public void Pular()
     {
         if (isOnFloor)
         {
@@ -148,7 +148,7 @@ public class Player0 : MonoBehaviour
             animatorComponent.SetBool("Morrendo", true);
             vida = 0;
         }
-        else if (other.gameObject.CompareTag("Robo_1_Inimigo"))
+        else if (other.gameObject.CompareTag("Robo_1_Inimigo") && other.gameObject.transform.position.y + 0.5 >= transform.position.y)
         {
             vida = vida - 20;
             PlayerRed(false);

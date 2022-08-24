@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 254227604}
   - component: {fileID: 254227606}
   - component: {fileID: 254227605}
+  - component: {fileID: 254227607}
   m_Layer: 0
   m_Name: Dinossauro_0
   m_TagString: Untagged
@@ -360,7 +361,7 @@ MonoBehaviour:
   Chao2: {fileID: 1464539525}
   Movimenta: {fileID: 5291409930220898992, guid: 6fcf212b280650b41b5333749a982923,
     type: 3}
-  GameOverCanvas: {fileID: 0}
+  GameOverCanvas: {fileID: 448593519}
   rb: {fileID: 254227601}
   forcaPulo: 800
   layerChao:
@@ -413,6 +414,19 @@ MonoBehaviour:
   Enimy: {fileID: 7889833982087658548, guid: b6cd4866a5811df4b9ce11df269f79df, type: 3}
   Msg_Entrar: {fileID: 3889730591927040739, guid: 6d891a7dcd85839428948be7dccb8532,
     type: 3}
+--- !u!114 &254227607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254227599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8dc7444efbb80469c5c2a1cb940929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerPassagem: 0
 --- !u!1 &395857996
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,7 +588,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448593519}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 519420031}
@@ -586,7 +600,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: -10000
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!224 &448593524
 RectTransform:
@@ -1298,7 +1312,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10000
   m_Sprite: {fileID: 21300000, guid: bd9deac8f687f41459e1322ab8748281, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1335,7 +1349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535487155}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8, y: -22, z: -5463.422}
+  m_LocalPosition: {x: 8, y: -22, z: 1000}
   m_LocalScale: {x: 197.18658, y: 190.26428, z: 60.704685}
   m_Children: []
   m_Father: {fileID: 619133712}

@@ -184,13 +184,13 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Entrou");
             PortalFinal.transform.position = new Vector3(posicaoChao1 + 10, 1.3f, -10);
-            Instantiate(PortalFinal, new Vector3(posicaoChao1 + 10, -0.7f, -10), Quaternion.identity);
+            Instantiate(PortalFinal, new Vector3(posicaoChao1 + 10, 0f, -10), Quaternion.identity);
         }
         else
         {
             Debug.Log("Entrou");
             PortalFinal.transform.position = new Vector3(posicaoChao2 + 10, 1.3f, -10);
-            Instantiate(PortalFinal, new Vector3(posicaoChao2 + 10, -0.7f, -10), Quaternion.identity);
+            Instantiate(PortalFinal, new Vector3(posicaoChao2 + 10, 0f, -10), Quaternion.identity);
         }
     }
 

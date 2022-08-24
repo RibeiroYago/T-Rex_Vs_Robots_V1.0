@@ -6,6 +6,7 @@ public class Inimigos : MonoBehaviour
 {
     public GameObject player;
     public BoxCollider2D head;
+    //public Animator Animator;
 
     public float velInimigo;
     public int gapMovimentacao;
@@ -77,5 +78,31 @@ public class Inimigos : MonoBehaviour
         }
        
         transform.position = Vector3.MoveTowards(transform.position, player.GetComponent<Player0>().transform.position, velInimigo * Time.deltaTime * 2);
+    }
+
+    private void OnCollisionEnter2D(Collision2D Collision2D)
+    {
+        if(Collision2D.gameObject.transform.position.y > transform.position.y  && Collision2D.gameObject.CompareTag("Player"))
+        {
+            //Morrer();
+            player.GetComponent<Player0>().animatorComponent.SetBool("Pulando", true);
+            player.GetComponent<Player0>().rb.AddForce(Vector2.up * 250);
+            player.GetComponent<Player0>().pular_AudioSource.Play();
+
+
+            Invoke("Mata", 0.1f);
+        }
+    }
+
+    /*void Morrer()
+    {
+        Animator.SetBool("Morrendo", true);
+
+        Invoke("Mata", 0.5f);
+    }*/
+
+    void Mata()
+    {
+        Destroy(gameObject);
     }
 }
