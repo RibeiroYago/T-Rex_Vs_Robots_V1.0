@@ -9,6 +9,9 @@ TagManager:
   - Inimigo
   - Robo_1_Inimigo
   - Robo_1_DeadBox
+  - Dino_Mago
+  - Bala1
+  - Chao
   layers:
   - Default
   - TransparentFX

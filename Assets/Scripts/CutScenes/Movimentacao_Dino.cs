@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player0 : MonoBehaviour
+public class Movimentacao_Dino : MonoBehaviour
 {
     //Publics
     public GameObject dino;
@@ -153,13 +153,6 @@ public class Player0 : MonoBehaviour
             vida = vida - 20;
             PlayerRed(false);
             rb.AddForce(Vector2.up * (forcaPulo/5));
-        }
-        else if (other.gameObject.CompareTag("Bala1"))
-        {
-            vida = vida - 20;
-            PlayerRed(false);
-            rb.AddForce(Vector2.up * (forcaPulo / 5));
-            other.gameObject.SetActive(false);
         }
     }
 
