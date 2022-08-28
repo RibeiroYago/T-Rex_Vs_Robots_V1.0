@@ -2136,3 +2136,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4aa70259c9254554c806ab98e0219cc9, type: 3}
+--- !u!1001 &7824214014818348336
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7824214014845260000, guid: 42396377151c6464198200d2cd104e30,
+        type: 3}
+      propertyPath: m_Name
+      value: Robo_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824214014845260002, guid: 42396377151c6464198200d2cd104e30,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824214014845260002, guid: 42396377151c6464198200d2cd104e30,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824214014845260002, guid: 42396377151c6464198200d2cd104e30,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824214014845260002, guid: 42396377151c6464198200d2cd104e30,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824214014845260002, guid: 42396377151c6464198200d2cd104e30,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824214014845260002, guid: 42396377151c6464198200d2cd104e30,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824214014845260002, guid: 42396377151c6464198200d2cd104e30,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824214014845260002, guid: 42396377151c6464198200d2cd104e30,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824214014845260002, guid: 42396377151c6464198200d2cd104e30,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824214014845260002, guid: 42396377151c6464198200d2cd104e30,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824214014845260002, guid: 42396377151c6464198200d2cd104e30,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824214014845260006, guid: 42396377151c6464198200d2cd104e30,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 751204447}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 42396377151c6464198200d2cd104e30, type: 3}
