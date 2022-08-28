@@ -1,7 +1,82 @@
 fileFormatVersion: 2
 guid: 2064261569e8b944f910c984e3c2794e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5257281446442223960
+    second: Parado_1
+  - first:
+      213: 2565642177535810855
+    second: Ataque_2
+  - first:
+      213: 5149106342598848247
+    second: Ataque_1
+  - first:
+      213: 2053197902589852570
+    second: Ataque_3
+  - first:
+      213: -3406738725257939104
+    second: Ataque_4
+  - first:
+      213: 2557398841768180049
+    second: Ataque_5
+  - first:
+      213: -7082454015814297184
+    second: Ataque_6
+  - first:
+      213: -701636400369672011
+    second: Morrendo_1
+  - first:
+      213: -7612629603126522339
+    second: Robo_4_Sprites_8
+  - first:
+      213: 5880651141805777090
+    second: Robo_4_Sprites_9
+  - first:
+      213: -4420085889856944197
+    second: Robo_4_Sprites_10
+  - first:
+      213: -4220555507337831578
+    second: Robo_4_Sprites_11
+  - first:
+      213: -3697494395569820025
+    second: Andando_1
+  - first:
+      213: 639802160206937479
+    second: Andando_2
+  - first:
+      213: -7468678013073151163
+    second: Andando_3
+  - first:
+      213: 1140007840019406120
+    second: Andando_4
+  - first:
+      213: 803371079984128763
+    second: Andando_5
+  - first:
+      213: 471382111453605522
+    second: Andando_6
+  - first:
+      213: -937099198018546472
+    second: Andando_7
+  - first:
+      213: -4807017891516562274
+    second: Andando_8
+  - first:
+      213: 1950040244013664193
+    second: Andando_9
+  - first:
+      213: 1995425503256734389
+    second: Andando_10
+  - first:
+      213: -1871393827304273054
+    second: Andando_11
+  - first:
+      213: -9013725338123341181
+    second: Robo_4_Sprites_23
+  - first:
+      213: -4368112071965444909
+    second: Robo_4_Sprites_24
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +115,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +146,546 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Parado_1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 623
+        width: 156
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 859c07b0f9d95f840800000000000000
+      internalID: 5257281446442223960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque_2
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 474
+        width: 143
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d18c497fdfa9320800000000000000
+      internalID: 2565642177535810855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 472
+        width: 154
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fea05dffec457740800000000000000
+      internalID: 5149106342598848247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque_3
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 469
+        width: 137
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9bf1753d9c6e7c10800000000000000
+      internalID: 2053197902589852570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque_4
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 472
+        width: 139
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 067fe66dd25d8b0d0800000000000000
+      internalID: -3406738725257939104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque_5
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 471
+        width: 135
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 159769862b4bd7320800000000000000
+      internalID: 2557398841768180049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ataque_6
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 471
+        width: 150
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a99959d89116bd90800000000000000
+      internalID: -7082454015814297184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Morrendo_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 333
+        width: 131
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b06b7a49694346f0800000000000000
+      internalID: -701636400369672011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robo_4_Sprites_8
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 331
+        width: 151
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1e450b95b18a5690800000000000000
+      internalID: -7612629603126522339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robo_4_Sprites_9
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 334
+        width: 137
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c024537e054c9150800000000000000
+      internalID: 5880651141805777090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robo_4_Sprites_10
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 329
+        width: 131
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb74c524d43b8a2c0800000000000000
+      internalID: -4420085889856944197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robo_4_Sprites_11
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 327
+        width: 132
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b5f46a0239d65c0800000000000000
+      internalID: -4220555507337831578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Andando_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 175
+        width: 151
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78e2019ff6cdfacc0800000000000000
+      internalID: -3697494395569820025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Andando_2
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 173
+        width: 156
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78d79a5cca801e800800000000000000
+      internalID: 639802160206937479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Andando_3
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 177
+        width: 144
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54b2109faece95890800000000000000
+      internalID: -7468678013073151163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Andando_4
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 172
+        width: 153
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82d5489271f12df00800000000000000
+      internalID: 1140007840019406120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Andando_5
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 173
+        width: 140
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf2a645adb5262b00800000000000000
+      internalID: 803371079984128763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Andando_6
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 180
+        width: 153
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29e6aaa688faa8600800000000000000
+      internalID: 471382111453605522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Andando_7
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 178
+        width: 153
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d41dce8e31cef2f0800000000000000
+      internalID: -937099198018546472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Andando_8
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 178
+        width: 153
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e94453342ba0a4db0800000000000000
+      internalID: -4807017891516562274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Andando_9
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 180
+        width: 147
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c7862a254fef0b10800000000000000
+      internalID: 1950040244013664193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Andando_10
+      rect:
+        serializedVersion: 2
+        x: 1612
+        y: 178
+        width: 153
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ba6f594cec21bb10800000000000000
+      internalID: 1995425503256734389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Andando_11
+      rect:
+        serializedVersion: 2
+        x: 1790
+        y: 175
+        width: 158
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26b8ba8aa397706e0800000000000000
+      internalID: -1871393827304273054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robo_4_Sprites_23
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 776
+        width: 40
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382783ecf80d8e280800000000000000
+      internalID: -9013725338123341181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Robo_4_Sprites_24
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 834
+        width: 51
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d4776bb6395163c0800000000000000
+      internalID: -4368112071965444909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
