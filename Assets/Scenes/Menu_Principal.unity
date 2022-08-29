@@ -712,7 +712,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: c7afa6b1a9f19cd4f863c9a45745c703, type: 3}
-    m_FontSize: 10
+    m_FontSize: 8
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -723,7 +723,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Exit
+  m_Text: Press Esc To Exit
 --- !u!222 &1309085343
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -931,7 +931,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Start
+  m_Text: Press Space
 --- !u!222 &1765545012
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1015,8 +1015,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064159678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.016, y: 0.022, z: 0}
-  m_LocalScale: {x: 2.0295105, y: 2.0351436, z: 1}
+  m_LocalPosition: {x: -0.168, y: 0.192, z: 0}
+  m_LocalScale: {x: 5.687453, y: 6.156656, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2

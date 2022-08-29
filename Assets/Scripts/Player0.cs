@@ -163,7 +163,7 @@ public class Player0 : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Bala_Robo4"))
         {
-            vida = vida - 50;
+            vida = vida - 15;
             PlayerRed(false);
             rb.AddForce(Vector2.up * (forcaPulo / 5));
             //other.gameObject.SetActive(false);

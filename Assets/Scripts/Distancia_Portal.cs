@@ -22,7 +22,15 @@ public class Distancia_Portal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distancia = Player.GetComponent<Player>().PortalFinal.transform.position.x - Player.transform.position.x;
+        if(SceneManager.GetActiveScene().name == "Preludio")
+        {
+            distancia = Player.GetComponent<Player>().PortalFinal.transform.position.x - Player.transform.position.x;
+        }
+        else
+        {
+            distancia = transform.position.x - Player.transform.position.x;
+        }
+        
         //distancia = transform.position.x - Player.transform.position.x;
 
         //Debug.Log(Player.GetComponent<Player>().PortalFinal.transform.position.x); 
@@ -40,7 +48,7 @@ public class Distancia_Portal : MonoBehaviour
         }
         else if(distancia < 5f && entrou == false)
         {
-            Instantiate(Msg_Entrar, new Vector3(transform.position.x, 6f, 80), Quaternion.identity);
+            Instantiate(Msg_Entrar, new Vector3(transform.position.x, transform.position.y + 6f, 80), Quaternion.identity);
 
             Player.GetComponent<Passa_Cenas>().TriggerPassagem = true;
             entrou = true;

@@ -156,6 +156,8 @@ public class Robo_Tipo_4 : MonoBehaviour
 
     void Mata()
     {
+        gameObject.GetComponent<Passa_Cenas>().TriggerPassagem = true;
+        player.GetComponent<Player0>().vida = player.GetComponent<Player0>().vida + 100;
         Destroy(gameObject);
     }
 
