@@ -12,7 +12,7 @@ public class Passa_Cenas : MonoBehaviour
 
     private int numeroLista, tamanhoLista;
 
-    string[] fases = new string[] {"Menu_Principal", "Preludio", "Fase1"};
+    string[] fases = new string[] {"Menu_Principal", "Preludio", "CutScene1", "Fase1", "CutScene2", "Fase2", "CutScene3", "Fase3", "CutScene4", "Fase4", "CutScene5"};
 
 
     // Start is called before the first frame update

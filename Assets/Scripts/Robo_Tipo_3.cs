@@ -145,6 +145,7 @@ public class Robo_Tipo_3 : MonoBehaviour
 
     void Mata()
     {
+        player.GetComponent<Player0>().vida = player.GetComponent<Player0>().vida + 50;
         Destroy(gameObject);
     }
 

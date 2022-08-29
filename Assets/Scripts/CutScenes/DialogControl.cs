@@ -41,7 +41,7 @@ public class DialogControl : MonoBehaviour
         "Quer que eu te morda?",
         "Se acalme, vou te explicar tudo...",
         "Daqui muitos anos a terra será ou seria populada por humanos, seres detentores de poderosas tecnologias",
-        "Mas isso só aconteceu devido a Elon misk, um magnata, criador da máquina do tempo",
+        "Mas isso só aconteceu devido a Emon Lusk, um magnata, criador da máquina do tempo",
         "Elon foi o responsável pela extinção de nós, dinossauros!",
         "O que ocorre é que nesse espaço tempo ele quer cometer o que fez com outras civilizações",
         "Mas que M#RD@@, e porque eu?",
@@ -69,11 +69,28 @@ public class DialogControl : MonoBehaviour
         "Eu só quero que essa Me#$a acabe logo, para mim comer alguma coisa que não seja metal...",
         "Atenção com essa próxima viagem, ela será a decisiva e mais perigosa de todas!",
         "Fale mais...",
-        "Você tera contato com os robôs mais fortes de lusk, cuidado! No final, acredito que nosso alvo estará te esperando...",
+        "Você tera contato com os robôs mais fortes de Lusk, cuidado! No final, acredito que nosso alvo estará te esperando...",
         "Afinal, você já o derrotou em dois marcos históricos da espécie dele...",
         "Agora será tudo ou nada!!!!!!!",
         "UAAAARRRRRRRRRRRRRRR"
     };
+
+    string[] tonalidadeCT4 = new string[] { "n", "n", "b"};
+    string[] ordemFalasTxtCT4 = new string[] { "Mago", "Mago", "Dino"};
+    string[] falasTxtCT4 = new string[] {
+        "Agora será seu fim Dino...",
+        "Chega de Jogos...",
+        "UAAAARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR"
+    };
+
+    string[] tonalidadeCT5 = new string[] { "n", "b" };
+    string[] ordemFalasTxtCT5 = new string[] { "Mago", "Dino", "Dino" };
+    string[] falasTxtCT5 = new string[] {
+        "DINO, VOCÊ É UM HERÓI... Graças a você Emon, deixará nós dinossauros em paz...",
+        "Eu só fiz meu serviço... UAAAARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR"
+        
+    };
+
 
 
 
@@ -98,6 +115,18 @@ public class DialogControl : MonoBehaviour
             ordemFalas.AddRange(ordemFalasTxtCT3);
             falas.AddRange(falasTxtCT3);
             tonalidade.AddRange(tonalidadeCT3);
+        }
+        else if(NomeCena == "CutScene4")
+        {
+            ordemFalas.AddRange(ordemFalasTxtCT4);
+            falas.AddRange(falasTxtCT4);
+            tonalidade.AddRange(tonalidadeCT4);
+        }
+        else if (NomeCena == "CutScene5")
+        {
+            ordemFalas.AddRange(ordemFalasTxtCT5);
+            falas.AddRange(falasTxtCT5);
+            tonalidade.AddRange(tonalidadeCT5);
         }
 
         JanelaDialogoMago.SetActive(false);

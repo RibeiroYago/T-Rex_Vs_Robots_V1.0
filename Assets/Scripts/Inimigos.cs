@@ -103,6 +103,7 @@ public class Inimigos : MonoBehaviour
 
     void Mata()
     {
+        player.GetComponent<Player0>().vida = player.GetComponent<Player0>().vida + 10;
         Destroy(gameObject);
     }
 }
